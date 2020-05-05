@@ -1,6 +1,6 @@
 $tablet-width: 660px;
 $desktop-width: 1080px;
-$background: #343090;
+$background: #d7e0ff;
 
 // Palette: https://colors.muz.li/palette/343090/5f59f7/6592fd/44c2fd/8c61ff
 
@@ -23,12 +23,7 @@ $background: #343090;
 }
 
 @mixin AppDesktop {
-    color: #6592fd;
-    font-weight: 600;
-    text-shadow: 2px 2px 10px #44c2fd;
-    font-size: 26px;
     margin-left: 5%;
-
 }
 
 @include mobile {

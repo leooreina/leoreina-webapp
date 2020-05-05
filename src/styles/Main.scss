@@ -1,0 +1,82 @@
+$tablet-width: 660px;
+$desktop-width: 1080px;
+$background: #343090;
+
+// Palette: https://colors.muz.li/palette/343090/5f59f7/6592fd/44c2fd/8c61ff
+
+@mixin mobile {
+    @media (min-width: 0px) and (max-width: #{$tablet-width}) {@content;}
+}
+
+@mixin tablet {
+    @media (min-width: $tablet-width) and (max-width: #{$desktop-width}) {@content;}
+}
+  
+@mixin desktop {
+    @media (min-width: #{$desktop-width + 1px}) {@content;}
+}
+
+@mixin name {
+    color:#5f59f7;
+    font-weight: 600;
+    font-size: 26px;
+}
+
+@mixin details {
+    margin-top: 15px;   
+}
+
+@mixin description($marginSize) {
+    margin-left: $marginSize;
+    margin-top: $marginSize;
+    color: #343090;
+    font-size: 18px;
+    font-weight: 500;
+}
+
+@mixin boxes($size, $columns, $header) {
+    display: grid;
+    @if $header {
+        grid-template-columns: $size 1fr;
+    } @else {
+        grid-template-columns: repeat($columns, $size);
+    }
+}
+
+@mixin box($color, $margin) {
+    background-color: $color;
+    width: 30px;
+    height: 60px;
+    margin-left: $margin;
+}
+
+@include mobile {
+    .name {@include name};
+    .details {@include details};
+    .box-blue {@include box(#44c2fd, 0px)};
+    .box-purple {@include box(#8c61ff, 30px)};
+    .boxes {@include boxes(60px, 2, false)}
+    .header {@include boxes(120px, 2, true)}
+    .description {@include description(30px)};
+}
+
+@include tablet {
+    .name {@include name};
+    .details {@include details};
+    .box-blue {@include box(#44c2fd, 0px)};
+    .box-purple {@include box(#8c61ff, 30px)};
+    .boxes {@include boxes(60px, 2, false)}
+    .header {@include boxes(120px, 2, true)}
+    .description {@include description(30px)};
+}
+
+@include desktop {
+    .name {@include name};
+    .details {@include details};
+    .box-blue {@include box(#44c2fd, 0px)};
+    .box-purple {@include box(#8c61ff, 30px)};
+    .boxes {@include boxes(60px, 2, false)}
+    .header {@include boxes(120px, 2, true)}
+    .description {@include description(30px)};
+}
+
