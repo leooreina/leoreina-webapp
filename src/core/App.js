@@ -1,9 +1,11 @@
 import React from 'react';
+import Main from '../views/Main';
+import '../styles/App.scss';
 
-function App() {
+const App = () => {
   return (
     <div className="App">
-      Hello world!
+      <Main/>
     </div>
   );
 }
