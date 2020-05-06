@@ -39,20 +39,26 @@ export default class Main extends Component {
     render() {
         const { content } = this.state
         return (
-            <div className="header">
-                <div className="boxes">
-                    {this.updateDraw()}
-                    {this.updateDraw()}
-                </div>
-                <div className="details">
-                    <div className="name">
-                        {content ? content.default.name : null}
+            <React.Fragment>
+                <div className="language"></div>
+                <div className="header">
+                    <div className="boxes">
+                        {this.updateDraw()}
+                        {this.updateDraw()}
                     </div>
-                    <div className="description">
-                        {content ? content.default.description : null}
+                    <div className="details">
+                        <div className="name">
+                            {content ? content.default.name : null}
+                        </div>
+                        <div className="description">
+                            {content ? content.default.description : null}
+                        </div>
+                        <div className="profile">
+                            {content ? content.default.profile : null}
+                        </div>
                     </div>
                 </div>
-            </div>
+            </React.Fragment>
         )
     }
 }
