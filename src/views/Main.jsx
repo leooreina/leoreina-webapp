@@ -7,7 +7,7 @@ import * as english from '../utils/en-us.json';
 export default class Main extends Component {
     state = {
         draw: 0,
-        lng: 'pt-br',
+        lng: 'PT',
         content: null
     }
 
@@ -23,7 +23,7 @@ export default class Main extends Component {
 
     chooseLanguage() {
         const { lng } = this.state;
-        if (lng === 'pt-br') this.setState({ content: {...portuguese} })
+        if (lng === 'PT') this.setState({ content: {...portuguese} })
         else this.setState({ content: {...english} })
     }
 
@@ -40,7 +40,10 @@ export default class Main extends Component {
         const { content } = this.state
         return (
             <React.Fragment>
-                <div className="language"></div>
+                <div className="language">
+                    <div className="language-selection">{this.state.lng}</div>
+                    <div className="language-icon"><i className="fas fa-language"></i></div>
+                </div>
                 <div className="header">
                     <div className="boxes">
                         {this.updateDraw()}

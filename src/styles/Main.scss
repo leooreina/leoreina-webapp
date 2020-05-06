@@ -51,6 +51,22 @@ $background: #343090;
     margin-left: $margin;
 }
 
+@mixin language($height, $marginLeft) {
+    display: grid;
+    grid-template-columns: 30px 50px;
+    height: $height;
+    margin-left: $marginLeft;
+    color: #8c61ff;
+}
+
+@mixin languageSelectionIcon($fontSize, $paddingTop) {
+    font-size: $fontSize;
+    font-weight: 600;
+    margin-left: 10px;
+    padding-top: $paddingTop;
+    height: 40px;
+}
+
 @include mobile {
     .name {@include name};
     .details {@include details};
@@ -60,6 +76,9 @@ $background: #343090;
     .header {@include boxes(120px, 2, true)}
     .description {@include description(30px, 30px, 17px, left)};
     .profile {@include description(-100px, 30px, 15px, justify)};
+    .language {@include language(40px, 70%)};
+    .language-selection {@include languageSelectionIcon(16px, 7px)}
+    .language-icon {@include languageSelectionIcon(28px, 0px)}
 }
 
 @include tablet {
@@ -71,6 +90,9 @@ $background: #343090;
     .header {@include boxes(120px, 2, true)}
     .description {@include description(30px, 30px, 19px, left)};
     .profile {@include description(30px, 20px, 16px, justify)};
+    .language {@include language(40px, 70%)};
+    .language-selection {@include languageSelectionIcon(18px, 7px)}
+    .language-icon {@include languageSelectionIcon(30px, 0px)}
 }
 
 @include desktop {
@@ -82,5 +104,8 @@ $background: #343090;
     .header {@include boxes(120px, 2, true)}
     .description {@include description(30px, 30px, 19px, left)};
     .profile {@include description(30px, 30px, 17px, justify)};
+    .language {@include language(40px, 80%)};
+    .language-selection {@include languageSelectionIcon(20px, 7px)}
+    .language-icon {@include languageSelectionIcon(32px, 0px)}
 }
 
