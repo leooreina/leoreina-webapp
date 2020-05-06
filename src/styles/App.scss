@@ -22,21 +22,22 @@ $background: #d7e0ff;
     font-family: 'Quicksand', sans-serif;
 }
 
-@mixin AppDesktop {
-    margin-left: 5%;
+@mixin App($marginLeft, $marginRight) {
+    margin-left: $marginLeft;
+    margin-right: $marginRight;
 }
 
 @include mobile {
     html {@include HtmlDesktop}
-    .App {@include AppDesktop};
+    .App {@include App(0px, 20px)};
 }
 
 @include tablet {
     html {@include HtmlDesktop}
-    .App {@include AppDesktop};
+    .App {@include App(8%, 8%)};
 }
 
 @include desktop {
     html {@include HtmlDesktop}
-    .App {@include AppDesktop};
+    .App {@include App(10%, 30%)};
 }

@@ -26,12 +26,13 @@ $background: #343090;
     margin-top: 15px;   
 }
 
-@mixin description($marginSize) {
-    margin-left: $marginSize;
-    margin-top: $marginSize;
+@mixin description($marginLeft, $marginTop, $fontSize, $textAlign) {
+    margin-left: $marginLeft;
+    margin-top: $marginTop;
     color: #343090;
-    font-size: 18px;
+    font-size: $fontSize;
     font-weight: 500;
+    text-align: $textAlign;
 }
 
 @mixin boxes($size, $columns, $header) {
@@ -57,7 +58,8 @@ $background: #343090;
     .box-purple {@include box(#8c61ff, 30px)};
     .boxes {@include boxes(60px, 2, false)}
     .header {@include boxes(120px, 2, true)}
-    .description {@include description(30px)};
+    .description {@include description(30px, 30px, 17px, left)};
+    .profile {@include description(-100px, 30px, 15px, justify)};
 }
 
 @include tablet {
@@ -67,7 +69,8 @@ $background: #343090;
     .box-purple {@include box(#8c61ff, 30px)};
     .boxes {@include boxes(60px, 2, false)}
     .header {@include boxes(120px, 2, true)}
-    .description {@include description(30px)};
+    .description {@include description(30px, 30px, 19px, left)};
+    .profile {@include description(30px, 20px, 16px, justify)};
 }
 
 @include desktop {
@@ -77,6 +80,7 @@ $background: #343090;
     .box-purple {@include box(#8c61ff, 30px)};
     .boxes {@include boxes(60px, 2, false)}
     .header {@include boxes(120px, 2, true)}
-    .description {@include description(30px)};
+    .description {@include description(30px, 30px, 19px, left)};
+    .profile {@include description(30px, 30px, 17px, justify)};
 }
 
