@@ -7,24 +7,23 @@ import * as english from '../utils/en-us.json';
 export default class Main extends Component {
     state = {
         draw: 0,
-        lng: 'pt-br',
+        lng: 'PT',
         content: null
     }
 
     constructor(props) {
         super(props)
         this.updateDraw = this.updateDraw.bind(this)
-        this.chooseLanguage = this.chooseLanguage.bind(this)
+        this.setLanguage = this.setLanguage.bind(this)
+        this.updateLanguage = this.updateLanguage.bind(this)
     }
 
     componentDidMount() {
-        this.chooseLanguage()
+        this.setLanguage()
     }
 
-    chooseLanguage() {
-        const { lng } = this.state;
-        if (lng === 'pt-br') this.setState({ content: {...portuguese} })
-        else this.setState({ content: {...english} })
+    setLanguage() {
+        this.setState({ content: {...portuguese} })
     }
 
     updateDraw() {
@@ -36,11 +35,22 @@ export default class Main extends Component {
         )
     }
 
+    updateLanguage() {
+        let { lng } = this.state;
+        if (lng === 'PT') this.setState({ lng: 'EN', content: {...english} })
+        if (lng === 'EN') this.setState({ lng: 'PT', content: {...portuguese} }) 
+    }
+
     render() {
-        const { content } = this.state
+        const { content, lng } = this.state
         return (
             <React.Fragment>
-                <div className="language"></div>
+                <div className="language" onClick={this.updateLanguage}>
+                    <div className="language-selection">{lng}</div>
+                    <div className="language-icon">
+                        <i className="fas fa-language"></i>
+                    </div>
+                </div>
                 <div className="header">
                     <div className="boxes">
                         {this.updateDraw()}
