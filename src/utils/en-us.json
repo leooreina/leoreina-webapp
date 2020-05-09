@@ -1,5 +1,31 @@
 {
     "name": "Leonardo Reina",
     "description": "Full Stack Developer",
-    "profile": "Graduated in Environmental Management, Developer as occupation. Since first line of code written in 2018, I have been fallen in love for learning something new every day."
+    "profile": "Graduated in Environmental Management, Developer as occupation. Since first line of code written in 2018, I have been fallen in love for learning something new every day.",
+    "sections": [
+        {
+            "icon": "fab fa-github",
+            "label": "Github"
+        },
+        {
+            "icon": "fab fa-linkedin",
+            "label": "LinkedIn"
+        },
+        {
+            "icon": "fas fa-briefcase",
+            "label": "Work Experience"
+        },
+        {
+            "icon": "fas fa-graduation-cap",
+            "label": "Education Background"
+        },
+        {
+            "icon": "fas fa-laptop-code",
+            "label": "Courses"
+        },
+        {
+            "icon": "fas fa-award",
+            "label": "Skills"
+        }
+    ]
 }

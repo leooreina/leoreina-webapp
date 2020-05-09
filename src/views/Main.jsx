@@ -1,5 +1,6 @@
 import React from 'react';
 import { Component } from "react";
+import Section from '../views/Section';
 import '../styles/Main.scss';
 import * as portuguese from '../utils/pt-br.json';
 import * as english from '../utils/en-us.json';
@@ -8,7 +9,7 @@ export default class Main extends Component {
     state = {
         draw: 0,
         lng: 'PT',
-        content: null
+        content: null,
     }
 
     constructor(props) {
@@ -58,16 +59,24 @@ export default class Main extends Component {
                     </div>
                     <div className="details">
                         <div className="name">
-                            {content ? content.default.name : null}
+                            <span>{content ? content.default.name : null}</span>
                         </div>
                         <div className="description">
-                            {content ? content.default.description : null}
+                            <span>{content ? content.default.description : null}</span>
                         </div>
                         <div className="profile">
-                            {content ? content.default.profile : null}
+                            <span>{content ? content.default.profile : null}</span>
                         </div>
                     </div>
                 </div>
+                {
+                    content ? content.default.sections.map(section => (
+                        <Section 
+                            icon={section.icon}
+                            label={section.label}
+                        />
+                    )) : null
+                }
             </React.Fragment>
         )
     }
