@@ -57,6 +57,10 @@ $background: #343090;
     height: $height;
     margin-left: $marginLeft;
     color: #8c61ff;
+    &:hover {
+        color: #44c2fd;
+        cursor: pointer;
+    }
 }
 
 @mixin languageSelectionIcon($fontSize, $paddingTop) {
