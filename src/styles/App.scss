@@ -39,5 +39,5 @@ $background: #d7e0ff;
 
 @include desktop {
     html {@include HtmlDesktop}
-    .App {@include App(10%, 30%)};
+    .App {@include App(20%, 30%)};
 }

@@ -1,0 +1,57 @@
+$tablet-width: 913px;
+$desktop-width: 1080px;
+$desktop-widthBig: 1320px;
+
+// Palette: https://colors.muz.li/palette/343090/5f59f7/6592fd/44c2fd/8c61ff
+
+@mixin mobile {
+    @media (min-width: 0px) and (max-width: #{$tablet-width}) {@content;}
+}
+
+@mixin tablet {
+    @media (min-width: $tablet-width) and (max-width: #{$desktop-width}) {@content;}
+}
+
+@mixin desktop {
+    @media (min-width: $desktop-width) and (max-width: #{$desktop-widthBig}) {@content;}
+}
+  
+@mixin desktopBig {
+    @media (min-width: #{$desktop-widthBig + 1px}) {@content;}
+}
+
+@mixin backgroundSection($fontSize, $marginLeft, $marginTop, $padding, $widthSection, $fontWeight) {
+    background-color: #8c61ff;
+    color: white;
+    font-size: $fontSize;
+    font-weight: $fontWeight;
+    margin-left: $marginLeft;
+    margin-top: $marginTop;
+    padding: $padding;
+    border-bottom-right-radius: 15px;
+    border-top-right-radius: 15px;
+    width: $widthSection;
+}
+
+@mixin sectionLabel {
+    padding-left: 10px;
+}
+
+@include mobile {
+    
+}
+
+@include tablet {
+    .section-label {@include sectionLabel()};
+    .background-section {@include backgroundSection(18px, -11%, 10px, 10px, 30%, 600)};
+}
+
+@include desktop {
+    .section-label {@include sectionLabel()};
+    .background-section {@include backgroundSection(20px, -41%, 15px, 15px, 48%, 600)};
+}
+
+@include desktopBig {
+    .section-label {@include sectionLabel()};
+    .background-section {@include backgroundSection(20px, -41%, 15px, 15px, 38%, 600)};
+}
