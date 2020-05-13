@@ -70,8 +70,9 @@ export default class Main extends Component {
                     </div>
                 </div>
                 {
-                    content ? content.default.sections.map(section => (
+                    content ? content.default.sections.map((section, index) => (
                         <Section 
+                            key={index}
                             icon={section.icon}
                             label={section.label}
                         />

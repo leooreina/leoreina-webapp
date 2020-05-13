@@ -20,38 +20,63 @@ $desktop-widthBig: 1320px;
     @media (min-width: #{$desktop-widthBig + 1px}) {@content;}
 }
 
-@mixin backgroundSection($fontSize, $marginLeft, $marginTop, $padding, $widthSection, $fontWeight) {
-    background-color: #8c61ff;
-    color: white;
+@mixin backgroundSection(
+    $fontSize,
+    $marginLeft,
+    $marginTop,
+    $padding,
+    $widthSection,
+    $fontWeight,
+    $isMobile
+) {
     font-size: $fontSize;
     font-weight: $fontWeight;
     margin-left: $marginLeft;
     margin-top: $marginTop;
     padding: $padding;
-    border-bottom-right-radius: 15px;
-    border-top-right-radius: 15px;
     width: $widthSection;
+    @if $isMobile {
+        color: #343090;
+        &:hover {
+            cursor: pointer;
+            color: #44c2fd;
+        }
+    } @else {
+        background-color: #8c61ff;
+        color: white;
+        border-bottom-right-radius: 15px;
+        border-top-right-radius: 15px;
+        &:hover {
+            background-color: #44c2fd;
+            cursor: pointer;
+        }
+    }
 }
 
-@mixin sectionLabel {
-    padding-left: 10px;
+@mixin sectionLabel($isMobile) {
+    @if $isMobile {
+        display: none;
+    } @else {
+        padding-left: 10px;
+    }
 }
 
 @include mobile {
-    
+    .section-label {@include sectionLabel(true)}
+    .background-section {@include backgroundSection(30px, 2px, 10px, 10px, 32px, 600, true)}
 }
 
 @include tablet {
-    .section-label {@include sectionLabel()};
-    .background-section {@include backgroundSection(18px, -11%, 10px, 10px, 30%, 600)};
+    .section-label {@include sectionLabel(false)};
+    .background-section {@include backgroundSection(18px, -11%, 10px, 10px, 30%, 600, false)};
 }
 
 @include desktop {
-    .section-label {@include sectionLabel()};
-    .background-section {@include backgroundSection(20px, -41%, 15px, 15px, 48%, 600)};
+    .section-label {@include sectionLabel(false)};
+    .background-section {@include backgroundSection(20px, -41%, 15px, 15px, 48%, 600, false)};
 }
 
 @include desktopBig {
-    .section-label {@include sectionLabel()};
-    .background-section {@include backgroundSection(20px, -41%, 15px, 15px, 38%, 600)};
+    .section-label {@include sectionLabel(false)};
+    .background-section {@include backgroundSection(20px, -41%, 15px, 15px, 38%, 600, false)};
 }
