@@ -39,6 +39,7 @@ $background: #343090;
     display: grid;
     @if $header {
         grid-template-columns: $size 1fr;
+        margin-bottom: 80px;
     } @else {
         grid-template-columns: repeat($columns, $size);
     }
@@ -80,7 +81,7 @@ $background: #343090;
     .header {@include boxes(120px, 2, true)}
     .description {@include description(30px, 30px, 17px, left)};
     .profile {@include description(-100px, 30px, 15px, justify)};
-    .language {@include language(40px, 70%)};
+    .language {@include language(40px, 90%)};
     .language-selection {@include languageSelectionIcon(16px, 7px)}
     .language-icon {@include languageSelectionIcon(28px, 0px)}
 }
@@ -94,7 +95,7 @@ $background: #343090;
     .header {@include boxes(120px, 2, true)}
     .description {@include description(30px, 30px, 19px, left)};
     .profile {@include description(30px, 20px, 16px, justify)};
-    .language {@include language(40px, 70%)};
+    .language {@include language(40px, 90%)};
     .language-selection {@include languageSelectionIcon(18px, 7px)}
     .language-icon {@include languageSelectionIcon(30px, 0px)}
 }
@@ -108,7 +109,7 @@ $background: #343090;
     .header {@include boxes(120px, 2, true)}
     .description {@include description(30px, 30px, 19px, left)};
     .profile {@include description(30px, 30px, 17px, justify)};
-    .language {@include language(40px, 80%)};
+    .language {@include language(40px, 100%)};
     .language-selection {@include languageSelectionIcon(20px, 7px)}
     .language-icon {@include languageSelectionIcon(32px, 0px)}
 }

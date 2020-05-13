@@ -1,5 +1,31 @@
 {
     "name": "Leonardo Reina",
     "description": "Desenvolvedor Full Stack",
-    "profile": "Gestor ambiental de formação, desenvolvedor de profissão. Desde a primeira linha de código escrita em 2018, me apaixono por aprender algo novo todos os dias."
+    "profile": "Gestor ambiental de formação, desenvolvedor de profissão. Desde a primeira linha de código escrita em 2018, me apaixono por aprender algo novo todos os dias.",
+    "sections": [
+        {
+            "icon": "fab fa-github",
+            "label": "Github"
+        },
+        {
+            "icon": "fab fa-linkedin",
+            "label": "LinkedIn"
+        },
+        {
+            "icon": "fas fa-briefcase",
+            "label": "Experiência"
+        },
+        {
+            "icon": "fas fa-graduation-cap",
+            "label": "Formação Acadêmica"
+        },
+        {
+            "icon": "fas fa-laptop-code",
+            "label": "Cursos"
+        },
+        {
+            "icon": "fas fa-award",
+            "label": "Competências"
+        }
+    ]
 }
