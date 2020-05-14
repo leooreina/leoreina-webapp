@@ -35,13 +35,17 @@ $background: #343090;
     text-align: $textAlign;
 }
 
-@mixin boxes($size, $columns, $header) {
+@mixin boxes($size, $columns, $header, $isMobile) {
     display: grid;
-    @if $header {
+    @if $header && $isMobile == 'false' {
         grid-template-columns: $size 1fr;
         margin-bottom: 80px;
     } @else {
         grid-template-columns: repeat($columns, $size);
+    }
+
+    @if $header && $isMobile {
+        margin-bottom: 20px;
     }
 }
 
@@ -67,7 +71,7 @@ $background: #343090;
 @mixin languageSelectionIcon($fontSize, $paddingTop) {
     font-size: $fontSize;
     font-weight: 600;
-    margin-left: 10px;
+    margin-left: 0px;
     padding-top: $paddingTop;
     height: 40px;
 }
@@ -77,11 +81,11 @@ $background: #343090;
     .details {@include details};
     .box-blue {@include box(#44c2fd, 0px)};
     .box-purple {@include box(#8c61ff, 30px)};
-    .boxes {@include boxes(60px, 2, false)}
-    .header {@include boxes(120px, 2, true)}
+    .boxes {@include boxes(60px, 2, false, true)}
+    .header {@include boxes(120px, 2, true, true)}
     .description {@include description(30px, 30px, 17px, left)};
     .profile {@include description(-100px, 30px, 15px, justify)};
-    .language {@include language(40px, 90%)};
+    .language {@include language(40px, 85%)};
     .language-selection {@include languageSelectionIcon(16px, 7px)}
     .language-icon {@include languageSelectionIcon(28px, 0px)}
 }
@@ -91,8 +95,8 @@ $background: #343090;
     .details {@include details};
     .box-blue {@include box(#44c2fd, 0px)};
     .box-purple {@include box(#8c61ff, 30px)};
-    .boxes {@include boxes(60px, 2, false)}
-    .header {@include boxes(120px, 2, true)}
+    .boxes {@include boxes(60px, 2, false, false)}
+    .header {@include boxes(120px, 2, true, false)}
     .description {@include description(30px, 30px, 19px, left)};
     .profile {@include description(30px, 20px, 16px, justify)};
     .language {@include language(40px, 90%)};
@@ -105,8 +109,8 @@ $background: #343090;
     .details {@include details};
     .box-blue {@include box(#44c2fd, 0px)};
     .box-purple {@include box(#8c61ff, 30px)};
-    .boxes {@include boxes(60px, 2, false)}
-    .header {@include boxes(120px, 2, true)}
+    .boxes {@include boxes(60px, 2, false, false)}
+    .header {@include boxes(120px, 2, true, false)}
     .description {@include description(30px, 30px, 19px, left)};
     .profile {@include description(30px, 30px, 17px, justify)};
     .language {@include language(40px, 100%)};
