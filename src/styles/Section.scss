@@ -36,6 +36,7 @@ $desktop-widthBig: 1320px;
     padding: $padding;
     width: $widthSection;
     @if $isMobile {
+        text-align: center;
         color: #343090;
         &:hover {
             cursor: pointer;
@@ -61,9 +62,17 @@ $desktop-widthBig: 1320px;
     }
 }
 
+@mixin sectionsGrid() {
+    display: grid;
+    grid-template-columns: repeat(6, 50px);
+    grid-gap: 2px;
+    margin-left: 10px;
+}
+
 @include mobile {
+    .sections-grid {@include sectionsGrid()};
     .section-label {@include sectionLabel(true)}
-    .background-section {@include backgroundSection(30px, 2px, 10px, 10px, 32px, 600, true)}
+    .background-section {@include backgroundSection(30px, 0px, 0px, 0px, 100%, 400, true)}
 }
 
 @include tablet {

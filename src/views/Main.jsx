@@ -2,6 +2,7 @@ import React from 'react';
 import { Component } from "react";
 import Section from '../views/Section';
 import '../styles/Main.scss';
+import '../styles/Section.scss';
 import * as portuguese from '../utils/pt-br.json';
 import * as english from '../utils/en-us.json';
 
@@ -69,15 +70,17 @@ export default class Main extends Component {
                         </div>
                     </div>
                 </div>
-                {
-                    content ? content.default.sections.map((section, index) => (
-                        <Section 
-                            key={index}
-                            icon={section.icon}
-                            label={section.label}
-                        />
-                    )) : null
-                }
+                <div className="sections-grid">
+                    {
+                        content ? content.default.sections.map((section, index) => (
+                            <Section 
+                                key={index}
+                                icon={section.icon}
+                                label={section.label}
+                            />
+                        )) : null
+                    }
+                </div>
             </React.Fragment>
         )
     }
